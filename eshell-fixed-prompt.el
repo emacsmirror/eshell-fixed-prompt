@@ -56,8 +56,8 @@
       (eshell-send-input)
       (let ((prompt-after (funcall eshell-prompt-function)))
         (unless (string= prompt-before prompt-after)
-          (eshell/clear-scrollback)
-          (eshell-fixed-prompt-send-input-without-output-filter))))))
+          (insert "echo ''")
+          (eshell-fixed-prompt-send-input))))))
 
 (defun eshell-fixed-prompt-input-start-position ()
   "Return the start position of the fixed prompt."
